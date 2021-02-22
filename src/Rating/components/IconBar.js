@@ -38,6 +38,10 @@ const IconBar = ({
       if (!readonly && onIconTap) {
         onIconTap(position + 1);
       }
+      // If it's readonly and don't have a custom event, let's pass it to the parent
+      if (readonly && !onIconTap) {
+        this.onPress()
+      }
     }}
   >
     {type === "custom" ? (
