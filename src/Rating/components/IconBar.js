@@ -32,15 +32,12 @@ const IconBar = ({
     activeOpacity={1}
     accessible={isAccessible}
     importantForAccessibility={isAccessible ? "yes" : "no"}
+    pointerEvents={readonly ? "none" : ""}
     accessibilityLabel={`Press to rate ${position + 1} out of ${totalCount}`}
     accessibilityRole="button"
     onPress={() => {
       if (!readonly && onIconTap) {
         onIconTap(position + 1);
-      }
-      // If it's readonly and don't have a custom event, let's pass it to the parent
-      if (readonly && !onIconTap && this) {
-        this.onPress()
       }
     }}
   >
