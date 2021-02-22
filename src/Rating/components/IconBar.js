@@ -32,7 +32,7 @@ const IconBar = ({
     activeOpacity={1}
     accessible={isAccessible}
     importantForAccessibility={isAccessible ? "yes" : "no"}
-    pointerEvents={readonly ? "none" : ""}
+    pointerEvents={readonly ? "none" : "auto"}
     accessibilityLabel={`Press to rate ${position + 1} out of ${totalCount}`}
     accessibilityRole="button"
     onPress={() => {
