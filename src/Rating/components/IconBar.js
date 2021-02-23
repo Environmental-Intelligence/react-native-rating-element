@@ -57,7 +57,7 @@ const IconBar = ({
      : (type === "fontawesome" ? 
         <StyledFontAwesome name={name} size={size} color={color} margin={margin} /> :
         (type === "entypo" ? 
-        <StyledFontAwesome name={name} size={size} color={color} margin={margin} /> :
+        <StyledEntypo name={name} size={size} color={color} margin={margin} /> :
         <Entypo name={name} size={size} color={color} margin={margin} />
      )
      )}
