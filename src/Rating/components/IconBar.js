@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Image, TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
 import Icon from "react-native-vector-icons/Ionicons";
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
 
 const StyledIcon = styled(Icon)`
   margin: ${({ margin }) => (margin ? `0 ${margin}px` : "0 1px")};
