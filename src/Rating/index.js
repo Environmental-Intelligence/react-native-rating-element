@@ -153,7 +153,7 @@ Rating.propTypes = {
     "column",
     "column-reverse",
   ]),
-  type: PropTypes.oneOf(["icon", "custom"]),
+  type: PropTypes.oneOf(["icon", "custom", "fontawesome"]),
   selectedIconImage: PropTypes.node,
   emptyIconImage: PropTypes.node,
 };

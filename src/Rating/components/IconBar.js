@@ -37,7 +37,7 @@ const IconBar = ({
     accessible={isAccessible}
     importantForAccessibility={isAccessible ? "yes" : "no"}
     pointerEvents={readonly ? "none" : "auto"}
-    accessibilityLabel={`Press to rate ${position + 1} put of ${totalCount}`}
+    accessibilityLabel={`Press to rate ${position + 1} out of ${totalCount}`}
     accessibilityRole="button"
     onPress={() => {
       if (!readonly && onIconTap) {
@@ -52,7 +52,7 @@ const IconBar = ({
         size={size}
       />
      : (type === "fontawesome" ? 
-        <StyledFontAwesome name={name} size={size} color={color} margin={margin} /> :
+        <StyledFontAwesome icon={name} size={size} color={color} margin={margin} /> :
         <StyledIcon name={name} size={size} color={color} margin={margin} />
      )}
   </TouchableOpacity>
@@ -67,7 +67,7 @@ IconBar.propTypes = {
   readonly: PropTypes.bool,
   position: PropTypes.number,
   filled: PropTypes.bool,
-  type: PropTypes.oneOf(["icon", "custom"]),
+  type: PropTypes.oneOf(["icon", "custom", "fontawesome"]),
   selectedIconImage: PropTypes.node,
   emptyIconImage: PropTypes.node,
   totalCount: PropTypes.number,
