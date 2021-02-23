@@ -7,6 +7,9 @@ import Icon from "react-native-vector-icons/Ionicons";
 const StyledIcon = styled(Icon)`
   margin: ${({ margin }) => (margin ? `0 ${margin}px` : "0 1px")};
 `;
+const StyledFontAwesome = styled(FontAwesomeIcon)`
+  margin: ${({ margin }) => (margin ? `0 ${margin}px` : "0 1px")};
+`;
 const StyledImage = styled(Image)`
   margin: ${({ margin }) => (margin ? `0 ${margin}px` : "0 1px")};
   width: ${({ size }) => `${size}px`};
@@ -33,7 +36,7 @@ const IconBar = ({
     accessible={isAccessible}
     importantForAccessibility={isAccessible ? "yes" : "no"}
     pointerEvents={readonly ? "none" : "auto"}
-    accessibilityLabel={`Press to rate ${position + 1} out of ${totalCount}`}
+    accessibilityLabel={`Press to rate ${position + 1} put of ${totalCount}`}
     accessibilityRole="button"
     onPress={() => {
       if (!readonly && onIconTap) {
@@ -41,15 +44,16 @@ const IconBar = ({
       }
     }}
   >
-    {type === "custom" ? (
+    {type === "custom" ? 
       <StyledImage
         source={filled ? selectedIconImage : emptyIconImage}
         margin={margin}
         size={size}
       />
-    ) : (
-      <StyledIcon name={name} size={size} color={color} margin={margin} />
-    )}
+     : (type === "fontawesome" ? 
+        <StyledFontAwesome name={name} size={size} color={color} margin={margin} /> :
+        <StyledIcon name={name} size={size} color={color} margin={margin} />
+     )}
   </TouchableOpacity>
 );
 
