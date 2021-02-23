@@ -3,12 +3,15 @@ import PropTypes from "prop-types";
 import { Image, TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
 import Icon from "react-native-vector-icons/Ionicons";
-import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome'
+import { FontAwesome, Entypo } from '@expo/vector-icons'; 
 
 const StyledIcon = styled(Icon)`
   margin: ${({ margin }) => (margin ? `0 ${margin}px` : "0 1px")};
 `;
-const StyledFontAwesome = styled(FontAwesomeIcon)`
+const StyledFontAwesome = styled(FontAwesome)`
+  margin: ${({ margin }) => (margin ? `0 ${margin}px` : "0 1px")};
+`;
+const StyledEntypo = styled(Entypo)`
   margin: ${({ margin }) => (margin ? `0 ${margin}px` : "0 1px")};
 `;
 const StyledImage = styled(Image)`
@@ -53,7 +56,10 @@ const IconBar = ({
       />
      : (type === "fontawesome" ? 
         <StyledFontAwesome icon={name} size={size} color={color} margin={margin} /> :
-        <StyledIcon name={name} size={size} color={color} margin={margin} />
+        (type === "entypo" ? 
+        <StyledFontAwesome name={name} size={size} color={color} margin={margin} /> :
+        <Entypo name={name} size={size} color={color} margin={margin} />
+     )
      )}
   </TouchableOpacity>
 );
@@ -67,7 +73,7 @@ IconBar.propTypes = {
   readonly: PropTypes.bool,
   position: PropTypes.number,
   filled: PropTypes.bool,
-  type: PropTypes.oneOf(["icon", "custom", "fontawesome"]),
+  type: PropTypes.oneOf(["icon", "custom", "fontawesome", "entypo"]),
   selectedIconImage: PropTypes.node,
   emptyIconImage: PropTypes.node,
   totalCount: PropTypes.number,
