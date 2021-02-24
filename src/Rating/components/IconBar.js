@@ -58,7 +58,7 @@ const IconBar = ({
         <StyledFontAwesome name={name} size={size} color={color} margin={margin} /> :
         (type === "entypo" ? 
         <StyledEntypo name={name} size={size} color={color} margin={margin} /> :
-        <Entypo name={name} size={size} color={color} margin={margin} />
+        <StyledIcon name={name} size={size} color={color} margin={margin} />
      )
      )}
   </TouchableOpacity>
